@@ -13,8 +13,12 @@
 
   <body>
     <div class="navbar d-flex flex-row justify-content-between">
-      <%= link_to "Add a new Cocktail", new_cocktail_path %>
-      <%= link_to "Back to Cocktail list", cocktails_path %>
+      <%= link_to new_cocktail_path do%>
+        <i class="fas fa-cocktail">Add</i>
+      <% end %>
+      <%= link_to cocktails_path do%>
+        <i class="fas fa-hand-point-left">Cocktail list</i>
+      <% end %>
     </div>
     <%= yield %>
   </body>

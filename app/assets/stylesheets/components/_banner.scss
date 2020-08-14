@@ -1,3 +1,13 @@
 .banner {
-  height: 400px;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  position:relative;
+
+  .app-title {
+    margin: 100px auto;
+    color: white;
+    position:absolute;
+    top: 120px; right: 100px;
+  }
 }
