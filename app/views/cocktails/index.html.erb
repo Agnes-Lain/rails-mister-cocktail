@@ -9,6 +9,7 @@
             <h5 class="card-title"><%= cocktail.name %></h5>
             <p class="card-text"></p>
             <%= link_to "How to make it", cocktail_path(cocktail), class:"btn btn-outline-dark" %>
+            <%= link_to "delete", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?"}  %>
           </div>
         </div>
       <% end %>

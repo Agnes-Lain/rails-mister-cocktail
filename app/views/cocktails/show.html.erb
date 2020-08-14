@@ -1,10 +1,8 @@
-<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80');">
-</div>
-
 
 
 <div class="container">
   <div class="row">
+    <%= cl_image_tag @cocktail.photo.key, width: 400, height: 300, crop: :fill %>
     <div class="col">
       <h1><%= @cocktail.name %></h1>
 
@@ -18,7 +16,7 @@
         <% end %>
       </ul>
 
-      <h3>Adding your ingredients: </h3>
+      <h5>Adding your ingredients: </h5>
       <%= simple_form_for [@cocktail,@dose] do |f|%>
         <%= f.association :ingredient %>
         <%= f.input :description %>
