@@ -1,12 +1,31 @@
-<h1><%= @cocktail.name %></h1>
+<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80');">
+</div>
 
-<h3>Ingredients for this cocktail:</h3>
-<ul>
-  <% @doses.each do |dose| %>
-  <li>
-    <%= dose.ingredient.name %> : <%= dose.description %>
-  </li>
-  <% end %>
-</ul>
 
-<%= link_to "back to Cocktail list", cocktails_path, class:"btn btn-primary" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1><%= @cocktail.name %></h1>
+
+      <h3>Ingredients for this cocktail:</h3>
+      <ul>
+        <% @doses.each do |dose| %>
+        <li>
+          <%= dose.ingredient.name %> : <%= dose.description %>
+            <%= link_to "delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?"} %>
+        </li>
+        <% end %>
+      </ul>
+
+      <h3>Adding your ingredients: </h3>
+      <%= simple_form_for [@cocktail,@dose] do |f|%>
+        <%= f.association :ingredient %>
+        <%= f.input :description %>
+        <%= f.submit %>
+      <% end %>
+
+      <%= link_to "back to Cocktail list", cocktails_path, class:"btn btn-primary" %>
+    </div>
+  </div>
+</div>
