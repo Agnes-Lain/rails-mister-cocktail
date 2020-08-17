@@ -1,0 +1,21 @@
+<div class="navbar d-flex flex-row justify-content-between">
+      <%= link_to "Cocktail Lover 2046", cocktails_path%>
+      <div class="nav-right d-flex flex-row align-items-center">
+        <%= link_to new_cocktail_path do%>
+          Add a new <i class="fas fa-cocktail"></i>
+        <% end %>
+        <form class="btn-search mx-3">
+          <div class="form-row align-items-center">
+
+            <div class="col-auto">
+              <label class="sr-only" for="inlineFormInput"></label>
+              <input type="text" class="form-control" id="inlineFormInput">
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-outline-success">Search</button>
+            </div>
+          </div>
+        </form>
+        <%= link_to "Login", new_user_session_path %>
+      </div>
+    </div>
